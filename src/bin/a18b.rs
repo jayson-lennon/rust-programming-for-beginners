@@ -63,7 +63,7 @@ fn print_access(employee: &Employee) -> Result<(), String> {
 fn main() {
     let manager = Employee {
         position: Position::Manager,
-        status: Status::Active,
+        status: Status::Terminated,
     };
 
     match print_access(&manager) {
