@@ -182,13 +182,6 @@ fn view_bills_menu(bills: &Bills) {
     }
 }
 
-/// Menu for viewing the bill total
-fn bill_total_menu(bills: &Bills) {
-    let bills = bills.get_all();
-    println!("Number of bills: {}", bills.len());
-    println!("Total amount: ${}", bills.iter().map(|bill| bill.amount).sum::<f64>());
-}
-
 /// Main menu loop.
 ///
 /// Displays the main menu and allows the user to make a selection.
@@ -201,7 +194,6 @@ fn main_menu() {
         println!("2. View bills");
         println!("3. Remove bill");
         println!("4. Update bill");
-        println!("5. Bill total");
         println!("");
         println!("Enter selection:");
     }
@@ -219,7 +211,6 @@ fn main_menu() {
             "2" => view_bills_menu(&bills),
             "3" => remove_bill_menu(&mut bills),
             "4" => update_bill_menu(&mut bills),
-            "5" => bill_total_menu(&bills),
             _ => break,
         }
     }
